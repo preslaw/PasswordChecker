@@ -1,0 +1,50 @@
+class Password():
+  def __init__(self,password):
+    self.password = password
+    self.isdigit = False
+    self.islower = False
+    self.isupper = False
+    self.islonger = False
+
+  def isLower(self):
+    for element in self.password:
+      if element.islower():
+        self.islower = True
+  
+  def isUpper(self):
+    for element in self.password:
+      if element.isupper():
+        self.isupper=True
+
+  def isDigit(self):
+    for element in self.password:
+      if element.isdigit():
+        self.isdigit = True
+
+  def isLonger(self):
+    if len(self.password)>6:
+      self.islonger = True
+      
+  def show(self,boolek=True):
+    if boolek == True:
+      print('True conditions:')
+    else:
+      print('False conditions:')
+    if boolek == self.islower:
+      print('is lower ',self.islower)
+    if boolek == self.isupper:
+      print('is upper ',self.isupper)
+    if boolek == self.isdigit:
+      print('is digit ',self.isdigit)
+    if boolek == self.islonger:
+      print('is longer ',self.islonger)
+
+
+haslo = Password('aA3')
+haslo.isLower()
+haslo.isUpper()
+haslo.isDigit()
+haslo.isLonger()
+
+haslo.show(True)
+haslo.show(False)
